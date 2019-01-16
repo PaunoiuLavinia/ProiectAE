@@ -22,6 +22,9 @@ var Products = sequelize.define('products', {
     name: Sequelize.STRING,
     category_id: Sequelize.INTEGER,
     description: Sequelize.STRING,
+    author: Sequelize.STRING,
+    publishingHouse: Sequelize.STRING,
+    yearAppearance: Sequelize.INTEGER,
     price: Sequelize.INTEGER,
     image: Sequelize.STRING
 })
@@ -31,6 +34,15 @@ var Reviews = sequelize.define('reviews', {
     name: Sequelize.STRING,
     content: Sequelize.STRING,
     score: Sequelize.INTEGER
+})
+
+var Messages = sequelize.define('messages', {
+    name: Sequelize.STRING,
+    surname: Sequelize.STRING,
+    email: Sequelize.STRING,
+    phone: Sequelize.STRING,
+    message: Sequelize.STRING
+    
 })
 
 Products.belongsTo(Categories, {foreignKey: 'category_id', targetKey: 'id'})
@@ -228,4 +240,22 @@ app.delete('/reviews/:id', function(request, response) {
     
 })
 
+
+app.post('/messages', function(request, response) {
+    Messages.create(request.body).then(function(message) {
+        response.status(201).send(message)
+    })
+})
+
+async function getMessages(request, response) {
+    try {
+        let messages = await Messages.findAll();
+        response.status(200).json(messages)
+    } catch(err) {
+        response.status(500).send('something bad happened')
+    }
+}
+
+
+app.get('/messages', getMessages)
 app.listen(8080)

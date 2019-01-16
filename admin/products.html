@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style2.css">
     <title>Catalog Admin - Products</title>
     
     <!-- Jquery JS file -->
@@ -18,19 +19,21 @@
     <script type="text/javascript" src="js/serialize.js"></script>
     <script type="text/javascript" src="js/products.js"></script>
 </head>
-<body>
+<body  style="background-image: url(4.jpg)">
 
 <!-- Content Section -->
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Product Catalog Admin</h1>
+        <div class="jumbotron text-center"  style=" background-image: url(5.jpg);">
+            <h1 >Cărțulești </h1>
+            <p>Magazinul tau de carti!</p> 
         </div>
     </div>
     <ul class="nav nav-tabs">
-      <li role="presentation"><a href="/admin/">Home</a></li>
+      <li role="presentation"><a href="/admin/">Acasa</a></li>
       <li role="presentation"><a href="categories.html">Categorii</a></li>
-      <li role="presentation" class="active"><a href="products.html">Produse</a></li>
+      <li role="presentation" class="active"><a href="products.html">Carti</a></li>
+      <li role="presentation"><a href="messages.html">Mesaje</a></li>
     </ul>
     <br/>
     <div class="row">
@@ -40,21 +43,28 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style ="margin-right:-80px; margin-left:-80px;">
         <div class="col-md-12">
             <div class="records_content">
                 <br/>
-                <h3>Produse</h3>
-                <table id="articles" class="table table-bordered table-striped">
+                <h3>Carti</h3>
+                <table id="articles" >
+                    <!--class="table table-bordered table-striped"-->
+                    <thead>
 						<tr>
 							<th>ID.</th>
-							<th>Category Name</th>
+							<th>Categorie</th>
 							<th>Nume</th>
 							<th>Descriere</th>
+							<th>Autor</th>
+							<th>Editura</th>
+							<th>An aparitie</th>
+							<th>Pret</th>
+							<th>Imagine</th>
 							<th>Update</th>
 							<th>Exclude</th>
 						</tr>
-            		</tr>
+            		</thead>
 				</<table>
             </div>
         </div>
@@ -73,7 +83,7 @@
                 <h4 class="modal-title" id="myModalLabel">Add New Product</h4>
             </div>
             <div class="modal-body">
-                <form id="record_form">
+                <form id="record_form" >
                     <input type="hidden" name="id" id="id" />
                     <div class="form-group">
                         <label for="name">ID Categorie</label>
@@ -87,6 +97,26 @@
                         <label for="abstract">Descriere</label>
                         <textarea name="description" id="description" placeholder="Descriere" rows="5" class="form-control"></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="author">Autor</label>
+                        <input type="text" name="author" id="author" placeholder="Autor" class="form-control"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="publishingHouse">Editura</label>
+                        <input type="text" name="publishingHouse" id="publishingHouse" placeholder="Editura" class="form-control"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="yearAppearance">An aparitie</label>
+                        <input type="number" name="yearAppearance" id="yearAppearance" placeholder="An aparitie" class="form-control"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Pret</label>
+                        <input type="number" name="price" id="price" placeholder="Pret" class="form-control"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Imagine</label>
+                        <input type="text" name="image" id="image" placeholder="Imagine" class="form-control"></input>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -94,7 +124,7 @@
                 <button type="button" class="btn btn-primary" onclick="saveRecord()">Save Record</button>
             </div>
         </div>
-    </div>
+    </div> 
 </div>
 <!-- // Modal -->
 

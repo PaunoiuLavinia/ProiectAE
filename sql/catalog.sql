@@ -50,9 +50,12 @@ CREATE TABLE IF NOT EXISTS `products` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `category_id` smallint(5) DEFAULT NULL,
   `name` varchar(30) DEFAULT NULL,
-  `description` varchar(100) DEFAULT NULL,
-  `price` int(11) NOT NULL,
-  `image` varchar(100) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL,
+  `author` varchar(100) DEFAULT NULL,
+  `publishingHouse` varchar(100) DEFAULT NULL,
+  `yearAppearance` int(4) DEFAULT NULL,
+  `price` float(4,2) NOT NULL,
+  `image` varchar(200) NOT NULL, 
   `createdAt` timestamp,
   `updatedAt` timestamp,
   PRIMARY KEY (`id`),
@@ -60,4 +63,19 @@ CREATE TABLE IF NOT EXISTS `products` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
+--
+-- Table structure for table `messages`
+--
 
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) DEFAULT NULL,
+  `surname` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+  `message` varchar(200) NOT NULL, 
+  `createdAt` timestamp,
+  `updatedAt` timestamp,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

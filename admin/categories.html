@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/style1.css">
     <meta charset="UTF-8">
+    
     <title>Catalog Admin - Categories</title>
     
     <!-- Jquery JS file -->
@@ -18,20 +20,23 @@
     <script type="text/javascript" src="js/serialize.js"></script>
     <script type="text/javascript" src="js/categories.js"></script>
 </head>
-<body>
+<body style="background-image: url(4.jpg)">
 
 <!-- Content Section -->
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Product Catalog Admin</h1>
+        <div class="jumbotron text-center" style=" background-image: url(5.jpg);">
+            <h1 >Cărțulești </h1>
+            <p>Magazinul tau de carti!</p> 
         </div>
     </div>
     <ul class="nav nav-tabs">
-      <li role="presentation" ><a href="/admin/">Home</a></li>
+      <li role="presentation"><a href="/admin/">Acasa</a></li>
       <li role="presentation" class="active"><a href="categories.html">Categorii</a></li>
-      <li role="presentation"><a href="products.html">Produse</a></li>
+      <li role="presentation"><a href="products.html">Carti</a></li>
+      <li role="presentation"><a href="messages.html">Mesaje</a></li>
     </ul>
+    
     <br/>
     <div class="row">
         <div class="col-md-12">
@@ -44,8 +49,9 @@
         <div class="col-md-12">
             <div class="records_content">
                 <br/>
-                <h3>Categorii</h3>
-                <table id="articles" class="table table-bordered table-striped">
+                <h3>Categorii de carti</h3>
+                <table id="articles" class="responstable">
+                    <!--class="table table-bordered table-striped "-->
 						<tr>
 							<th>ID.</th>
 							<th>Nume</th>
